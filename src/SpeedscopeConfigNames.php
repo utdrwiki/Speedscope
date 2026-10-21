@@ -20,5 +20,6 @@ class SpeedscopeConfigNames {
 	public const PUBLIC_ENDPOINT = self::PREFIX . 'PublicEndpoint';
 	public const SAMPLING_RATES = self::PREFIX . 'SamplingRates';
 	public const TOKEN = self::PREFIX . 'Token';
+	public const UNIX_SOCKET = self::PREFIX . 'UnixSocket';
 
 }

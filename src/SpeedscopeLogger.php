@@ -21,6 +21,7 @@ class SpeedscopeLogger {
 		SpeedscopeConfigNames::ENDPOINT,
 		SpeedscopeConfigNames::EXPOSE_CPU_INFO,
 		SpeedscopeConfigNames::TOKEN,
+		SpeedscopeConfigNames::UNIX_SOCKET,
 		MainConfigNames::HTTPProxy,
 	];
 
@@ -77,6 +78,12 @@ class SpeedscopeLogger {
 				'Content-Type' => 'application/json',
 			],
 		];
+		$unixSocket = $this->options->get( SpeedscopeConfigNames::UNIX_SOCKET );
+		if ( $unixSocket ) {
+			$options['curl'] = [
+				CURLOPT_UNIX_SOCKET_PATH => $unixSocket,
+			];
+		}
 		try {
 			$response = $client->post( "$endpoint/log", $options );
 		} catch ( Throwable $e ) {

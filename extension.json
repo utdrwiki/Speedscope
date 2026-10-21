@@ -63,6 +63,10 @@
 		"Token": {
 			"description": "The authentication token to send to the speedscope service",
 			"value": null
+		},
+		"UnixSocket": {
+			"description": "Unix socket to use when connecting to the Speedscope service",
+			"value": null
 		}
 	},
 	"HookHandlers": {
